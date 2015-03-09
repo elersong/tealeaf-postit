@@ -1,0 +1,28 @@
+<% if @post.errors.any? %>
+  <div class="alert alert-error">
+    <h3>These error(s) prevented your form from submitting.</h3>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @post do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <br>
+  
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br>
+  
+  <%= f.submit @btn_text, class: "btn btn-primary" %>
+  
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Showing: <%= @post.title %></h1>
+
+<p>description: <%= @post.description %></p>
+
+<p>url: <%= @post.url.nil? ? "n/a" : @post.url %></p>
+
+<%= link_to "Back to Index", posts_path %>
