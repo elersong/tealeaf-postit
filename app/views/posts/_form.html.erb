@@ -14,6 +14,11 @@
   <%= f.text_area :description %>
   <br>
   
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |chkbx| %>
+    <% chkbx.label(class: "checkbox inline") {chkbx.check_box(class: "checkbox") + chkbx.text} %>
+  <% end %>
+  <br><br>
+  
   <%= f.submit @btn_text, class: "btn btn-primary" %>
   
 <% end %>
