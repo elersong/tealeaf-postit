@@ -1,0 +1,11 @@
+<h5>Leave a Comment</h5>
+<%= render 'shared/errors', :object => @comment %>
+
+<%= form_for [@post, @comment] do |f| %>
+
+  <%= f.text_area :body %>
+  <br>
+  
+  <%= f.submit "Submit Comment", class: "btn btn-primary" %>
+  
+<% end %>

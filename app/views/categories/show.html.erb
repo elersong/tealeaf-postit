@@ -1,0 +1,15 @@
+<h2>Showing Posts for "<%= @category.name %>"</h2>
+
+<ul>
+  <% if @category.posts.count >= 1 %>
+  
+    <% @category.posts.each do |post| %>
+      <li><%= link_to post.title, post_path(post) %></li>
+    <% end %>
+    
+  <% else %>
+  
+    <li>It looks like I'm the only lonely post. Sadface.</li>
+    
+  <% end %>
+</ul>

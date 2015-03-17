@@ -1,13 +1,4 @@
-<% if @post.errors.any? %>
-  <div class="alert alert-error">
-    <h3>These error(s) prevented your form from submitting.</h3>
-    <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'shared/errors', :object => @post %>
 
 <%= form_for @post do |f| %>
 

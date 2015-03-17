@@ -5,3 +5,5 @@
 <p>url: <%= @post.url.nil? ? "n/a" : @post.url %></p>
 
 <%= link_to "Back to Index", posts_path %>
+
+<%= render 'comments/new', :object => @comment %>
