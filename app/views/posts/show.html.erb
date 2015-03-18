@@ -2,7 +2,7 @@
 
 <p>description: <%= @post.description %></p>
 
-<p>url: <%= @post.url.nil? ? "n/a" : @post.url %></p>
+<p>url: <%= @post.url.nil? ? "n/a" : format_and_link(@post.url) %></p>
 
 <%= render 'comments/new', :object => @comment %><br>
 
@@ -10,7 +10,7 @@
   <% if !comment.created_at.nil? %>
     <div class = "well span8">
       <em>"<%= comment.body %>"</em><br>
-      <small>Posted by <%= link_to comment.creator.nil? ? "Unknown" : comment.creator.username , "#" %> on <%= comment.created_at.strftime("%b %d, %Y") %></small>
+      <small>Posted by <%= link_to comment.creator.nil? ? "Unknown" : comment.creator.username , "#" %> on <%= to_human(comment.created_at) %></small>
     </div>
   <% end %>
 <% end %>
