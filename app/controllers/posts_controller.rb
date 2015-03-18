@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
+    @post.creator = User.first #TODO: make this dynamic
     
     if @post.save
       flash[:notice] = "Your post was successfully created."

@@ -14,16 +14,23 @@
 
  @import "bootstrap";
 
- .container {
+.container {
   margin-left: 135px
+}
+
+.quiet {
+  color: #515151;
 }
 
 .navbar .nav > li > a.brand {
   padding-left: 0px;
 }
 
-.quiet {
-  color: #ababab;
+a.badge {
+  &.badgetxt {
+    color: #e5e5e5;
+    font-size: 10px;
+  }
 }
 
 div.nav_item {
@@ -41,4 +48,3 @@ div.nav_item {
 div.comment_votes {
   padding: 10px;
 }
-
