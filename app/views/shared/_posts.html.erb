@@ -1,6 +1,13 @@
 <% posts.each do |post| %>
   <div class="well span6">
-    <strong><%= link_to post.title, post_path(post) %></strong>  <smalll>(<%= link_to "edit", edit_post_path(post) %>)</small><br>
+    <strong><%= link_to post.title, post_path(post) %></strong>
+    
+    <% if post.creator == current_user %>
+      <smalll>(<%= link_to "edit", edit_post_path(post) %>)</small><br>
+    <% else %>
+      <br>
+    <% end %>
+    
     <% post.categories.each do |category| %>
       <%= link_to category.name, category_path(category), class: "badge badgetxt" %>
     <% end %>

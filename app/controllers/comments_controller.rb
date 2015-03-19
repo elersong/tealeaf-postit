@@ -3,13 +3,22 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    @comment.creator = User.first
     
-    if @comment.save
-      flash[:notice] = "Your comment was successfully submitted."
-      redirect_to post_path(@post)
+    if current_user?
+      @comment.creator = current_user
+      
+      # only allow comments if the user is signed in
+      if @comment.save
+        flash[:notice] = "Your comment was successfully submitted."
+        redirect_to post_path(@post)
+      else
+        render 'posts/show'
+      end
+      
+    # user isn't signed in. redirect to login
     else
-      render 'posts/show'
+      flash[:error] = "You must be logged in to leave a comment."
+      redirect_to login_path
     end
   end
   

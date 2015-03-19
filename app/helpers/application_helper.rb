@@ -9,4 +9,16 @@ module ApplicationHelper
     timestamp.strftime("%b %d, %Y")
   end
   
+  def current_user?
+    !!current_user
+  end
+  
+  def current_user
+    if session[:user_id] != nil
+      @logged_in_user ||= User.find(session[:user_id])
+    else
+      nil
+    end
+  end
+  
 end
