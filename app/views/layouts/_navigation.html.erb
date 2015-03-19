@@ -28,7 +28,7 @@
   
   <li>
     <div class="nav_item">
-      <%= link_to "New Post", new_post_path, :class => "btn btn-sm btn-success" %>
+      <%= link_to "New Post", new_post_path, :class => "btn btn-small btn-success" %>
     </div>
   </li>
   
@@ -37,6 +37,11 @@
       <%= link_to "Logout from #{current_user.username}", logout_path %>
     </li>
   <% else %>
+    <li>
+      <div class="nav_item">
+        <%= link_to "Register", register_path, :class => "btn btn-small btn-primary" %>
+      </div>
+    </li>
     <li>
       <%= link_to "Login", login_path %>
     </li>
