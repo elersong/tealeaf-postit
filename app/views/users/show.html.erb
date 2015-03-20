@@ -3,6 +3,9 @@
 <div class="well">
   <strong>Username: </strong><%= @user.username %><br>
   <strong>Created on: </strong><%= to_human(@user.created_at) %>
+  <% if @user.id == current_user.id %>
+    <p>[<%= link_to "edit", edit_user_path(@user) %>]</p>
+  <% end %>
 </div>
 
 <ul class="nav nav-tabs" id="profileTab">
