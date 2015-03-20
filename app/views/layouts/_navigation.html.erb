@@ -34,7 +34,24 @@
   
   <% if current_user? %>
     <li>
-      <%= link_to "Logout from #{current_user.username}", logout_path %>
+      <!-- Dropdown Button for User Menu -->
+      <div class="btn-group nav_item">
+        <%= link_to "#", class: "btn btn-small dropdown-toggle", 'data-toggle' => 'dropdown' do %>
+          <%= current_user.username %> <span class="caret"></span>
+        <% end %>
+        
+        <ul class="dropdown-menu">
+          <li><%= link_to "My Profile", user_path(current_user) %></li>
+          
+          <li class="divider"></li>
+          
+          <li>
+            <%= link_to(logout_path) do %>
+              <i class="icon-off"></i> Sign Out
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </li>
   <% else %>
     <li>

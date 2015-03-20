@@ -1,0 +1,13 @@
+<% comments.each do |comment| %>
+  <% if !comment.created_at.nil? %>
+    <div class = "well span8">
+      <em>"<%= comment.body %>"</em><br>
+      
+      <% if profile_page? %>
+        <small>Posted on <%= link_to comment.post.title , post_path(comment.post) %> on <%= to_human(comment.created_at) %></small>
+      <% else %>
+        <small>Posted by <%= link_to comment.creator.nil? ? "Unknown" : comment.creator.username , user_path(comment.creator) %> on <%= to_human(comment.created_at) %></small>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

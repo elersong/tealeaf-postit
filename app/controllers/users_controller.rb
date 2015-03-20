@@ -9,11 +9,16 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:notice] = "#{params[:user][:username]} was successfully registered!"
-      session[:user_id] = User.find_by_username(params[:user][:username]).id
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       render 'new'
     end
+  end
+  
+  def show
+    session[:profile_page] = true # this is a profile page, obviously
+    @user = User.find(params[:id])
   end
   
   private

@@ -1,0 +1,23 @@
+<h2>Profile</h2><hr>
+
+<div class="well">
+  <strong>Username: </strong><%= @user.username %><br>
+  <strong>Created on: </strong><%= to_human(@user.created_at) %>
+</div>
+
+<ul class="nav nav-tabs" id="profileTab">
+  <li class="active"><a href="#posts">Posts (<%= @user.posts.count %>)</a></li>
+  <li><a href="#comments">Comments (<%= @user.comments.count %>)</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="posts"><%= render 'shared/posts', posts: @user.posts %></div>
+  <div class="tab-pane" id="comments"><%= render 'shared/comments', comments: @user.comments %></div>
+</div>
+ 
+<script>
+  $('#profileTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+</script>

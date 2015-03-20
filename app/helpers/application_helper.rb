@@ -21,4 +21,8 @@ module ApplicationHelper
     end
   end
   
+  def profile_page?
+    session[:profile_page] == true ? true : false
+  end
+  
 end
