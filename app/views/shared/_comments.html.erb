@@ -1,17 +1,23 @@
+<% comments = comments.sort_by {|comm| comm.vote_score}.reverse %>
+
 <% comments.each do |comment| %>
   <% if !comment.created_at.nil? %>
     <div class = row >
       
       <span class="span0 well text-center">
-        <%= link_to(vote_post_comment_path(comment.post, comment, :vote => true), method: :post) do %>
-         <i class="icon-arrow-up"></i>
-        <% end %><br>
+        <% if current_user? %>
+          <%= link_to(vote_post_comment_path(comment.post, comment, :vote => true), method: :post) do %>
+           <i class="icon-arrow-up"></i>
+          <% end %><br>
+        <% end %>
         
         <%= "#{comment.vote_score} votes" %><br>
         
-        <%= link_to(vote_post_comment_path(comment.post, comment, :vote => false), method: :post) do %>
-         <i class="icon-arrow-down"></i>
-        <% end %><br>
+        <% if current_user? %>
+          <%= link_to(vote_post_comment_path(comment.post, comment, :vote => false), method: :post) do %>
+           <i class="icon-arrow-down"></i>
+          <% end %><br>
+        <% end %>
       </span>
       
       <div class = "well span8">

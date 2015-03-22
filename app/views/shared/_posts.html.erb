@@ -1,15 +1,21 @@
+<% posts = posts.sort_by {|post| post.vote_score}.reverse %>
+
 <% posts.each do |post| %>
   <div class="row">
     
     <span class="span0 well text-center">
-      <%= link_to(vote_post_path(post, :vote => true), method: :post) do %>
-        <i class="icon-arrow-up"></i>
-      <% end %><br>
+      <% if current_user? %>
+        <%= link_to(vote_post_path(post, :vote => true), method: :post) do %>
+          <i class="icon-arrow-up"></i>
+        <% end %><br>
+      <% end %>
       
       <%= "#{post.vote_score} votes" %><br>
       
-      <%= link_to(vote_post_path(post, :vote => false), method: :post) do %>
-        <i class="icon-arrow-down"></i>
+      <% if current_user? %>
+        <%= link_to(vote_post_path(post, :vote => false), method: :post) do %>
+          <i class="icon-arrow-down"></i>
+        <% end %>
       <% end %>
     </span>
     
