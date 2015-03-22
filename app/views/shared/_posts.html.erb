@@ -1,15 +1,32 @@
 <% posts.each do |post| %>
-  <div class="well span6">
-    <strong><%= link_to post.title, post_path(post) %></strong>
+  <div class="row">
     
-    <% if post.creator == current_user %>
-      <smalll>(<%= link_to "edit", edit_post_path(post) %>)</small><br>
-    <% else %>
-      <br>
-    <% end %>
+    <span class="span0 well text-center">
+      <%= link_to(vote_post_path(post, :vote => true), method: :post) do %>
+        <i class="icon-arrow-up"></i>
+      <% end %><br>
+      
+      <%= "#{post.vote_score} votes" %><br>
+      
+      <%= link_to(vote_post_path(post, :vote => false), method: :post) do %>
+        <i class="icon-arrow-down"></i>
+      <% end %>
+    </span>
     
-    <% post.categories.each do |category| %>
-      <%= link_to category.name, category_path(category), class: "badge badgetxt" %>
-    <% end %>
+    <div class="well span6">
+      <strong><%= link_to post.title, post_path(post) %></strong>
+      
+      <% if post.creator == current_user %>
+        <smalll>(<%= link_to "edit", edit_post_path(post) %>)</small><br>
+      <% else %>
+        <br>
+      <% end %>
+      
+      <% post.categories.each do |category| %>
+        <%= link_to category.name, category_path(category), class: "badge badgetxt" %>
+      <% end %><br><br>
+      
+      <%= link_to "#{post.comments.count} comments", post_path(post) %>
+    </div>
   </div>
 <% end %>

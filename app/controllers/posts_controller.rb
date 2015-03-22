@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :get_post, only: [:edit, :update, :show]
+  before_action :get_post, only: [:edit, :update, :show, :vote]
   
   def index
     @posts = Post.all
@@ -49,6 +49,18 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       render 'edit'
+    end
+  end
+  
+  def vote
+    vote = @post.votes.new(creator: current_user, vote: params[:vote])
+    
+    if vote.save
+      flash[:notice] = "Your vote was successfully registered."
+      redirect_to :back # there's no view, so take the user back
+    else
+      flash[:error] = "Your vote was not counted."
+      redirect_to :back
     end
   end
   

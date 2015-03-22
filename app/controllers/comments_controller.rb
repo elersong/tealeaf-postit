@@ -22,6 +22,19 @@ class CommentsController < ApplicationController
     end
   end
   
+  def vote
+    @comment = Comment.find(params[:id])
+    vote = @comment.votes.new(creator: current_user, vote: params[:vote])
+    
+    if vote.save
+      flash[:notice] = "Your vote was successfully registered."
+      redirect_to :back # there's no view, so take the user back
+    else
+      flash[:error] = "Your vote was not counted."
+      redirect_to :back
+    end
+  end
+  
   private
   
   def comment_params

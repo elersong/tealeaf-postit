@@ -1,13 +1,28 @@
 <% comments.each do |comment| %>
   <% if !comment.created_at.nil? %>
-    <div class = "well span8">
-      <em>"<%= comment.body %>"</em><br>
+    <div class = row >
       
-      <% if profile_page? %>
-        <small>Posted on <%= link_to comment.post.title , post_path(comment.post) %> on <%= to_human(comment.created_at) %></small>
-      <% else %>
-        <small>Posted by <%= link_to comment.creator.nil? ? "Unknown" : comment.creator.username , user_path(comment.creator) %> on <%= to_human(comment.created_at) %></small>
-      <% end %>
+      <span class="span0 well text-center">
+        <%= link_to(vote_post_comment_path(comment.post, comment, :vote => true), method: :post) do %>
+         <i class="icon-arrow-up"></i>
+        <% end %><br>
+        
+        <%= "#{comment.vote_score} votes" %><br>
+        
+        <%= link_to(vote_post_comment_path(comment.post, comment, :vote => false), method: :post) do %>
+         <i class="icon-arrow-down"></i>
+        <% end %><br>
+      </span>
+      
+      <div class = "well span8">
+        <em>"<%= comment.body %>"</em><br>
+        
+        <% if profile_page? %>
+          <small>Posted on <%= link_to comment.post.title , post_path(comment.post) %> on <%= to_human(comment.created_at) %></small>
+        <% else %>
+          <small>Posted by <%= link_to comment.creator.nil? ? "Unknown" : comment.creator.username , user_path(comment.creator) %> on <%= to_human(comment.created_at) %></small>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
