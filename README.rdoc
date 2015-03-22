@@ -30,4 +30,4 @@
 
 
 == 5 March 2015
-Mistakenly deleted my entire repo by getting to happy with the `rm` command. Note to self, be more careful.
+Mistakenly deleted my entire repo by getting too happy with the `rm` command. Note to self, be more careful.

@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
     
     if @category.save
       flash[:notice] = "The category '#{params[:category][:name]}' was successfully created."
-      redirect_to categories_path
+      redirect_to root_path
     else
       render 'new'
     end

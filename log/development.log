@@ -23540,3 +23540,75 @@ Processing by PostsController#index as HTML
   Rendered layouts/_navigation.html.erb (3.0ms)
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 182ms (Views: 169.8ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/posts/9" for 12.198.82.26 at 2015-03-22 17:17:11 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered comments/_new.html.erb (6.9ms)
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_comments.html.erb (25.5ms)
+  Rendered posts/show.html.erb within layouts/application (38.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (5.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 129ms (Views: 99.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/posts/9/comments/44/vote?vote=false" for 12.198.82.26 at 2015-03-22 17:17:25 +0000
+Processing by CommentsController#vote as HTML
+  Parameters: {"authenticity_token"=>"i8Xcp2snrhGT5UPyr1/t6nGYiPFF2+AoVZPqJWIbUZE=", "vote"=>"false", "post_id"=>"9", "id"=>"44"}
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", "44"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mVote Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://tealeaf-postit-elersong.c9.io/posts/9
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/9" for 12.198.82.26 at 2015-03-22 17:17:25 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered comments/_new.html.erb (2.4ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_comments.html.erb (18.4ms)
+  Rendered posts/show.html.erb within layouts/application (23.2ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (8.4ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 3.0ms)
