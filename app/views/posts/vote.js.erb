@@ -4,4 +4,7 @@
   $('div.span12').prepend('<div class="alert alert-error"><a class="close" data-dismiss="alert">×</a><div id="flash_notice"><%= flash[:error] %></div></div>');
 <% end %>
 
+<% flash[:notice] = nil %>
+<% flash[:error] = nil %>
+
 $('span#vote_count_<%= @post.id %>').html('<%= @post.vote_score %> votes');
