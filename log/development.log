@@ -26659,3 +26659,399 @@ Processing by PostsController#index as HTML
   Rendered layouts/_navigation.html.erb (2.7ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 238ms (Views: 226.2ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/posts/9" for 12.198.82.26 at 2015-03-23 01:02:29 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered comments/_new.html.erb (3.9ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_comments.html.erb (112.8ms)
+  Rendered posts/show.html.erb within layouts/application (120.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (21.4ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 266ms (Views: 164.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/posts/9" for 12.198.82.26 at 2015-03-23 01:03:20 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered shared/_errors.html.erb (1.0ms)
+  Rendered comments/_new.html.erb (5.4ms)
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_comments.html.erb (24.0ms)
+  Rendered posts/show.html.erb within layouts/application (34.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 66ms (Views: 57.6ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/posts/9/comments/44/vote?vote=true" for 12.198.82.26 at 2015-03-23 01:03:22 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"true", "post_id"=>"9", "id"=>"44"}
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", "44"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mVote Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered comments/vote.js.erb (1.9ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    4:   $('div.span12').prepend('<div class="alert alert-error"><a class="close" data-dismiss="alert">×</a><div id="flash_notice"><%= flash[:error] %></div></div>');
+    5: <% end %>
+    6: 
+    7: $('span#comment_vote_count_<%= @post.id %>').html('<%= @post.vote_score %> votes');
+  app/views/comments/vote.js.erb:7:in `_app_views_comments_vote_js_erb___1694998035391596900_44283800'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.5ms)
+
+
+Started POST "/posts/9/comments/44/vote?vote=true" for 12.198.82.26 at 2015-03-23 01:03:31 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"true", "post_id"=>"9", "id"=>"44"}
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", "44"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mVote Exists (0.2ms)[0m  SELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comments/vote.js.erb (1.2ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    4:   $('div.span12').prepend('<div class="alert alert-error"><a class="close" data-dismiss="alert">×</a><div id="flash_notice"><%= flash[:error] %></div></div>');
+    5: <% end %>
+    6: 
+    7: $('span#comment_vote_count_<%= @post.id %>').html('<%= @post.vote_score %> votes');
+  app/views/comments/vote.js.erb:7:in `_app_views_comments_vote_js_erb___1694998035391596900_44283800'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.7ms)
+
+
+Started GET "/posts/9" for 12.198.82.26 at 2015-03-23 01:04:14 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered comments/_new.html.erb (4.6ms)
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_comments.html.erb (21.3ms)
+  Rendered posts/show.html.erb within layouts/application (29.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 64ms (Views: 55.8ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/posts/9/comments/44/vote?vote=true" for 12.198.82.26 at 2015-03-23 01:04:17 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"true", "post_id"=>"9", "id"=>"44"}
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", "44"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mVote Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 44
+  Rendered comments/vote.js.erb (3.4ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts/9/comments/38/vote?vote=true" for 12.198.82.26 at 2015-03-23 01:04:23 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"true", "post_id"=>"9", "id"=>"38"}
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", "38"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mVote Exists (0.2ms)[0m  SELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 38[0m
+  Rendered comments/vote.js.erb (3.1ms)
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for 12.198.82.26 at 2015-03-23 01:04:27 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 2[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 2
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 3[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 3
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 4[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 4
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 5[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 5
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 6[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 6
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 7[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 7
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 8[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 8
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 9[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 9
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 10[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 10
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 11[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 11
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 9
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 9[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 9]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 10
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 10]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 10]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 8[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 8
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 8]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 7
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 7[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 7]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 3[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 3
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 6
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 6[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 6]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 4[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 4
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 5
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 5[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 5]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 2
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?  [["post_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 11
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Post' AND "votes"."votable_id" = 11[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 11]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" INNER JOIN "post_categories" ON "categories"."id" = "post_categories"."category_id" WHERE "post_categories"."post_id" = ?[0m  [["post_id", 11]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 11]]
+  Rendered shared/_posts.html.erb (235.0ms)
+  Rendered posts/index.html.erb within layouts/application (236.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 270ms (Views: 254.7ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/posts/4" for 12.198.82.26 at 2015-03-23 01:04:31 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered comments/_new.html.erb (2.9ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered shared/_comments.html.erb (48.9ms)
+  Rendered posts/show.html.erb within layouts/application (55.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 79.8ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/posts/4/comments/36/vote?vote=true" for 12.198.82.26 at 2015-03-23 01:04:33 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"true", "post_id"=>"4", "id"=>"36"}
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", "36"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mVote Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "user_id", "votable_id", "votable_type", "vote") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Mar 2015 01:04:33 UTC +00:00], ["updated_at", Mon, 23 Mar 2015 01:04:33 UTC +00:00], ["user_id", 11], ["votable_id", 36], ["votable_type", "Comment"], ["vote", true]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36[0m
+  Rendered comments/vote.js.erb (2.6ms)
+Completed 200 OK in 26ms (Views: 5.5ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/posts/4/comments/39/vote?vote=false" for 12.198.82.26 at 2015-03-23 01:05:32 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"false", "post_id"=>"4", "id"=>"39"}
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", "39"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mVote Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "user_id", "votable_id", "votable_type", "vote") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Mar 2015 01:05:32 UTC +00:00], ["updated_at", Mon, 23 Mar 2015 01:05:32 UTC +00:00], ["user_id", 11], ["votable_id", 39], ["votable_type", "Comment"], ["vote", false]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39[0m
+  Rendered comments/vote.js.erb (3.2ms)
+Completed 200 OK in 35ms (Views: 7.7ms | ActiveRecord: 15.8ms)
+
+
+Started POST "/posts/4/comments/13/vote?vote=false" for 12.198.82.26 at 2015-03-23 01:05:42 +0000
+Processing by CommentsController#vote as JS
+  Parameters: {"vote"=>"false", "post_id"=>"4", "id"=>"13"}
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", "13"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mVote Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 11 AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "user_id", "votable_id", "votable_type", "vote") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Mar 2015 01:05:42 UTC +00:00], ["updated_at", Mon, 23 Mar 2015 01:05:42 UTC +00:00], ["user_id", 11], ["votable_id", 13], ["votable_type", "Comment"], ["vote", false]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13[0m
+  Rendered comments/vote.js.erb (2.3ms)
+Completed 200 OK in 46ms (Views: 6.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/posts/4" for 12.198.82.26 at 2015-03-23 01:05:47 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered comments/_new.html.erb (3.5ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" IS NULL[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 36[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 9[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 17[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? ORDER BY "posts"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 't' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."vote" = 'f' AND "votes"."votable_type" = 'Comment' AND "votes"."votable_id" = 39[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 0]]
+  Rendered shared/_comments.html.erb (43.1ms)
+  Rendered posts/show.html.erb within layouts/application (50.2ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 85ms (Views: 76.9ms | ActiveRecord: 5.4ms)

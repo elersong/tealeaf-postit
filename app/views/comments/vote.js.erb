@@ -1,0 +1,7 @@
+<% if flash[:notice] %>
+  $('div.span12').prepend('<div class="alert alert-success"><a class="close" data-dismiss="alert">×</a><div id="flash_notice"><%= flash[:notice] %></div></div>');
+<% elsif flash[:error] %>
+  $('div.span12').prepend('<div class="alert alert-error"><a class="close" data-dismiss="alert">×</a><div id="flash_notice"><%= flash[:error] %></div></div>');
+<% end %>
+
+$('span#comment_vote_count_<%= @comment.id %>').html('<%= @comment.vote_score %> votes');

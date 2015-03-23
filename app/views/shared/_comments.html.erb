@@ -6,15 +6,15 @@
       
       <span class="span0 well text-center">
         <% if current_user? %>
-          <%= link_to(vote_post_comment_path(comment.post, comment, :vote => true), method: :post) do %>
+          <%= link_to(vote_post_comment_path(comment.post, comment, :vote => true), method: :post, remote: true) do %>
            <i class="icon-arrow-up"></i>
           <% end %><br>
         <% end %>
         
-        <%= "#{comment.vote_score} votes" %><br>
+        <span id="comment_vote_count_<%= comment.id %>"><%= "#{comment.vote_score} votes" %></span><br>
         
         <% if current_user? %>
-          <%= link_to(vote_post_comment_path(comment.post, comment, :vote => false), method: :post) do %>
+          <%= link_to(vote_post_comment_path(comment.post, comment, :vote => false), method: :post, remote: true) do %>
            <i class="icon-arrow-down"></i>
           <% end %><br>
         <% end %>

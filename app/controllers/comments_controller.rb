@@ -26,19 +26,36 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     vote = @comment.votes.new(creator: current_user, vote: params[:vote])
     
-    if current_user?
-      # -------------------- Only run this block if user is logged in
-      if vote.save
-        flash[:notice] = "Your vote was successfully registered."
-        redirect_to :back # there's no view, so take the user back
-      else
-        flash[:error] = "Your vote was not counted. Note that you may only vote once."
-        redirect_to :back
+    respond_to do |format| 
+      
+      format.html do
+        if current_user?
+          # -------------------- Only run this block if user is logged in
+          if vote.save
+            redirect_to :back, notice: "Your vote was successfully registered."
+          else
+            flash[:error] = "Your vote was not counted. Note that you may only vote once."
+            redirect_to :back
+          end
+          # --------------------
+        else
+          flash[:error] = "You must be logged in to vote."
+          redirect_to :back
+        end
       end
-      # --------------------
-    else
-      flash[:error] = "You must be logged in to vote."
-      redirect_to :back
+      
+      format.js do
+        if current_user?
+          if vote.save
+            flash[:notice] = "Your vote was successfully registered."
+          else
+            flash[:error] = "Your vote was not counted. Note that you may only vote once." 
+          end
+        else
+          flash[:error] = "You must be logged into vote." 
+        end
+      end
+    
     end
   end
   
