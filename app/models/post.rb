@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
    validates_presence_of :description
    
    before_save :generate_slug # to make sure that all posts have a slug, since a title is required
+   before_validation :fwdslash_substitution
    
    def vote_score
       upvotes - downvotes
@@ -23,6 +24,11 @@ class Post < ActiveRecord::Base
    # Set slug as the path for path helper methods in the views
    def to_param
       self.slug
+   end
+   
+   # ensure there are no slashes in the title before slug generation
+   def fwdslash_substitution 
+      self.title = self.title.gsub("/","-").gsub("\\","-")
    end
    
    private
