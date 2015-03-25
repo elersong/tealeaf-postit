@@ -9,9 +9,11 @@ module Votable
       upvotes - downvotes
   end
   
-  # if I wanted to put in class methods
+  #if I wanted to put in class methods
   # module ClassMethods
-  #   ...
+  #   def testing
+  #     puts "testing"
+  #   end
   # end
   
   private
