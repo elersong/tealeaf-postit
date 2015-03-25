@@ -20,4 +20,11 @@ class ApplicationController < ActionController::Base
     session[:profile_page] = false
   end
   
+  def verify_admin(error)
+    if !current_user.admin?
+      flash[:error] = error
+      redirect_to root_path
+    end
+  end
+  
 end

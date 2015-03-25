@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   
-  before_action :verify_admin, only: [:create, :new]
+  before_action -> { verify_admin("You do not have permission to create a category.") }, only: [:create, :new]
 
   def new
     @category = Category.new
@@ -19,15 +19,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(slug: params[:id])
-  end
-  
-  private
-  
-  def verify_admin
-    if !current_user.admin?
-      flash[:error] = "You do not have permission to create a new category."
-      redirect_to root_path
-    end
   end
   
 end

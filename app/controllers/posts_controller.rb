@@ -41,6 +41,10 @@ class PostsController < ApplicationController
   end
   
   def edit
+    unless (current_user == @post.creator) || current_user.admin?
+      flash[:error] = "You cannot edit that post."
+      redirect_to posts_path 
+    end
   end
   
   def update
