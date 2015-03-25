@@ -1,4 +1,10 @@
 module Sluggable
+  # ========================================================================================
+  # In order to use this module, there needs to be a "slug" column in the db table.
+  # There also needs to be a "slug_string" method that returns the value to be slugged.
+  # If there are special validations for some not others, use the include block.
+  # ========================================================================================
+  
   extend ActiveSupport::Concern # allow simpler, non-metaprogramming syntax
   
   # code to be run once when module is included
