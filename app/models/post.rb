@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
    include Votable
    include Sluggable
-   include TimeZonable
    
    has_many :comments
    has_many :post_categories

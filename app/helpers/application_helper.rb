@@ -6,7 +6,7 @@ module ApplicationHelper
   end
   
   def to_human(timestamp)
-    timestamp.strftime("%b %d, %Y")
+    timestamp.in_time_zone(current_user.time_zone).strftime("%b %d, %Y")
   end
   
   def current_user?
