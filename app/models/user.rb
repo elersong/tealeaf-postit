@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
    include Sluggable
+   include TimeZonable
    
    has_many :posts
    has_many :comments

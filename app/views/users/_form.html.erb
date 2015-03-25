@@ -11,6 +11,10 @@
   <%= f.password_field :password_confirmation %>
   <br>
   
+  <%= f.label :time_zone %>
+  <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all, :class => :timezone %>
+  <br>
+  
   <%= f.submit @btn_text, class: "btn btn-primary" %>
   
 <% end %>
