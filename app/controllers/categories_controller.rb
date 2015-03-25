@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   
-  before_action :verify_admin, only: [:create]
+  before_action :verify_admin, only: [:create, :new]
 
   def new
     @category = Category.new
