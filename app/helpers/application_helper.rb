@@ -13,6 +13,11 @@ module ApplicationHelper
     !!current_user
   end
   
+  def admin?
+    return false if current_user.nil?
+    current_user.role == "admin"
+  end
+  
   def current_user
     if session[:user_id] != nil
       @logged_in_user ||= User.find(session[:user_id])

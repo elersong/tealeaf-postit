@@ -22,7 +22,7 @@
     <div class="well span6">
       <strong><%= link_to post.title, post_path(post) %></strong>
       
-      <% if post.creator == current_user || current_user.admin? %>
+      <% if post.creator == current_user || admin? %>
         <smalll>(<%= link_to "edit", edit_post_path(post) %>)</small><br>
       <% else %>
         <br>
